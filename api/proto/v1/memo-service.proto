@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package v1;
+
+import "google/protobuf/timestamp.proto";
+
+message Memo {
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    google.protobuf.Timestamp reminder = 4;
+}
+
+message CreateMemoRequest {
+    string api = 1;
+    Memo memo = 2;
+}
+
+message CreateMemoResponse {
+    string api = 1;
+    int64 id = 2;
+}
+
+message ReadMemoRequest {
+    string api = 1;
+    int64 id = 2;
+}
+
+message ReadMemoResponse {
+    string api = 1;
+    Memo memo = 2;
+}
+
+message ReadAllRequest {
+    string api = 1;
+}
+
+message ReadAllResponse {
+    repeated Memo memos = 2;
+}
+
+message UpdateMemoRequest {
+    string api = 1;
+    Memo memo = 2;
+}
+
+message UpdateMemoResponse {
+    string api = 1;
+    bool isUpdated = 2;
+}
+
+message DeleteMemoRequest {
+    string api = 1;
+    int64 id = 2;
+}
+
+message DeleteMemoResponse {
+    string api = 1;
+    bool isDeleted = 2;
+}
+
+service MemoService {
+    rpc Create(CreateMemoRequest) returns (CreateMemoResponse);
+    rpc Read(ReadMemoRequest) returns (ReadMemoResponse);
+    rpc ReadAll(ReadAllRequest) returns (ReadAllResponse);
+    rpc Update(UpdateMemoRequest) returns (UpdateMemoResponse);
+    rpc Delete(DeleteMemoRequest) returns (DeleteMemoResponse);
+}

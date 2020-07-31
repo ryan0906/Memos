@@ -1,0 +1,4 @@
+export GO_PATH=~/go
+export PATH=$PATH:/$GO_PATH/bin
+
+go mod init github.com/ryan0906/Memos
