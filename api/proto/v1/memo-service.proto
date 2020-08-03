@@ -36,6 +36,7 @@ message ReadAllRequest {
 }
 
 message ReadAllResponse {
+    string api = 1;
     repeated Memo memos = 2;
 }
 

@@ -6,8 +6,9 @@ import (
 	"flag"
 	"fmt"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/ryan0906/Memos/pkg/protocol/grpc"
-	v1 "github.com/ryan0906/Memos/pkq/service/v1"
+	v1 "github.com/ryan0906/Memos/pkg/service/v1"
 )
 
 // Config configuration for server

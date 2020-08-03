@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ryan0906/Memos/pkg/cmd"
+	cmd "github.com/ryan0906/Memos/pkg/cmd/server"
 )
 
 func main() {
